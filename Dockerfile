@@ -1,5 +1,5 @@
-FROM ubuntu
+FROM centos:centos7
 RUN apt update -y
-RUN apt install apache2 -y
+RUN apt install httpd -y
 COPY index.html /var/lib/html/
-CMD ["usr/sbin/apachectl","-D","FOREGROUND"]
+CMD ["usr/sbin/httpd","-D","FOREGROUND"]
